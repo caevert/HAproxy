@@ -2,7 +2,7 @@
 
 [Файлы конфигурации](files/)
 
-![Terraform apply](./assets/T-1.png)
+![Terraform apply](./files/Graf1.png)
 
 ![Service accounts](./assets/T-3.png)
 
