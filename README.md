@@ -298,8 +298,8 @@ scrape_configs:
 
 
 Дашборд Grafana
-![Dashbord-1](./files/Graf1.png)
+![Dashbord-1](./assets/Graf1.png)
 
-![Dashbord-2](./files/Graf2.png)
+![Dashbord-2](./assets/Graf2.png)
 Метрики Grafana
-![Dashbord-3](./files/Graf_metrics.png)
+![Dashbord-3](./assets/Graf_metrics.png)
