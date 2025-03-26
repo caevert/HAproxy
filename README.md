@@ -1,21 +1,14 @@
 # HAproxy
 
 [Файлы конфигурации](files/)
-
+Дашборд Grafana
 ![Dashbord-1](./files/Graf1.png)
 
 ![Dashbord-2](./files/Graf2.png)
-
+Метрики Grafana
 ![Dashbord-3](./files/Graf_metrics.png)
 
-VMS in YC
-```
-+----------------------+--------+---------------+---------+----------------+----------------+
-|          ID          |  NAME  |    ZONE ID    | STATUS  |  EXTERNAL IP   |  INTERNAL IP   |
-+----------------------+--------+---------------+---------+----------------+----------------+
-| epdjehfpdpfalutkuep9 | slave2 | ru-central1-b | RUNNING | 158.160.12.225 | 192.168.200.14 |
-| fhm2630o4n2btldi565o | slave1 | ru-central1-a | RUNNING | 89.169.143.31  | 192.168.100.20 |
-| fv485411t4bqp5mff2dt | master | ru-central1-d | RUNNING | 84.252.135.85  | 192.168.10.100 |
+![Dashbord-4](./files/haproxy.cfg)
 ```
 [Конфигурация terraform](I.Terraform/)
 
