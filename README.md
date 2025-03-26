@@ -115,13 +115,7 @@ listen stat
        stats auth admin:admin
        stats refresh 30s
 
----
-## Этап второй - Создание Kubernetes кластера
 
-На данном этапе необходимо развернуть `Kubernetes` кластер, для данной задачи будем использовать набор конфигураций _Ansible_ [`Kubespray`](https://github.com/kubernetes-sigs/kubespray)
-
-1. Клонирем `kubespray` командой `git clone https://github.com/kubernetes-sigs/kubespray`
-2. Создаем конфигурацию своего кластера:
 
 ```shell
 cd kubespray
