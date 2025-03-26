@@ -163,6 +163,135 @@ $WorkDirectory /var/spool/rsyslog
 $IncludeConfig /etc/rsyslog.d/*.conf
 
 ```
+keepalived_master.conf
+
+```
+ GNU nano 7.2                                                                         /etc/keepalived/keepalived.conf
+global_defs {
+    notification_email {
+        admin@yourdomain.com
+    }
+    smtp_connect_timeout 30
+    enable_traps
+}
+
+vrrp_script chk_haproxy {
+    script "killall -0 haproxy"
+    interval 2
+    weight 2
+    fall 2
+    rise 2
+}
+
+vrrp_instance VI_1 {
+    state MASTER
+    interface eth0
+    virtual_router_id 51
+    priority 101
+    advert_int 1
+    garp_master_delay 10
+
+    authentication {
+        auth_type PASS
+        auth_pass securepassword123
+    }
+
+    unicast_src_ip 84.252.130.37
+    unicast_peer {
+        62.84.113.123
+    }
+
+    virtual_ipaddress {
+        84.252.130.37/24 brd 84.252.130.255 scope global label eth0:10
+    }
+
+    track_script {
+        chk_haproxy
+    }
+}
+
+
+
+```
+
+keepalived_back.conf
+
+```
+
+global_defs {
+    notification_email {
+        admin@yourdomain.com
+    }
+    smtp_connect_timeout 30
+    enable_traps
+}
+
+vrrp_script chk_haproxy {
+    script "killall -0 haproxy"
+    interval 2
+    weight 2
+    fall 2
+    rise 2
+}
+
+vrrp_instance VI_1 {
+    state BACKUP
+    interface eth0
+    virtual_router_id 51
+    priority 100
+    advert_int 1
+    garp_master_delay 10
+
+    authentication {
+        auth_type PASS
+        auth_pass securepassword123
+    }
+
+    unicast_src_ip 62.84.113.123
+    unicast_peer {
+        84.252.130.37
+    }
+
+    virtual_ipaddress {
+        84.252.130.37/24 brd 84.252.130.255 scope global label eth0:10
+    }
+
+    track_script {
+        chk_haproxy
+    }
+}
+
+
+
+```
+prometheus.yml
+
+```
+# my global config
+global:
+  scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+  # scrape_timeout is set to the global default (10s).
+
+# Alertmanager configuration
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+       - localhost:9090
+
+# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
+rule_files:
+  # - "first_rules.yml"
+  # - "second_rules.yml"
+
+scrape_configs:
+  - job_name: 'haproxy'
+    static_configs:
+    - targets: ['localhost:9091']
+
+
+```
 
 [Файлы конфигурации](files/)
 
