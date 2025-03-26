@@ -98,14 +98,15 @@ backend rebrain_sql
        server rebrain_db_2 127.0.0.1:3306 check port 3306 inter 2s fall 2 rise 1 maxconn 100
 
 listen stat
-       bind *:777
-       mode http
-       stats enable
-       stats hide-version
-       stats realm Haproxy Statistics
-       stats uri /
-       stats auth admin:admin
-       stats refresh 30s
+    bind *:777
+    mode http
+    stats enable
+    stats uri /
+    stats refresh 30s
+    stats show-legends
+    stats auth admin:admin
+    stats realm "Haproxy Statistics"
+    stats hide-version
 
 ```
 ## rsyslog.conf
