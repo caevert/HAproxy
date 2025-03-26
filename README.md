@@ -1,7 +1,7 @@
 # HAproxy
+## Этап второй - Создание Kubernetes кластера
 
-
-haproxy.cfg
+## haproxy.cfg
 
 ```
 global
