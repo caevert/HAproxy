@@ -1,6 +1,8 @@
 # HAproxy
 
 [Файлы конфигурации](files/)
+
+
 Дашборд Grafana
 ![Dashbord-1](./files/Graf1.png)
 
