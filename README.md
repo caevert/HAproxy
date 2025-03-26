@@ -1,6 +1,6 @@
 # HAproxy
 
-[Конфигурация terraform](files/)
+[Файлы конфигурации](files/)
 
 ![Terraform apply](./assets/T-1.png)
 
