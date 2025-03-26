@@ -1,5 +1,6 @@
 # HAproxy
-## Этап второй - Создание Kubernetes кластера
+
+[Файлы конфигурации](files/)
 
 ## haproxy.cfg
 
@@ -107,7 +108,7 @@ listen stat
        stats refresh 30s
 
 ```
-rsyslog.conf
+## rsyslog.conf
 
 ```
 # For more information install rsyslog-doc and see
@@ -163,7 +164,7 @@ $WorkDirectory /var/spool/rsyslog
 $IncludeConfig /etc/rsyslog.d/*.conf
 
 ```
-keepalived_master.conf
+## keepalived_master.conf
 
 ```
  GNU nano 7.2                                                                         /etc/keepalived/keepalived.conf
@@ -214,7 +215,7 @@ vrrp_instance VI_1 {
 
 ```
 
-keepalived_back.conf
+## keepalived_back.conf
 
 ```
 
@@ -264,7 +265,7 @@ vrrp_instance VI_1 {
 
 
 ```
-prometheus.yml
+## prometheus.yml
 
 ```
 # my global config
