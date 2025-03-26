@@ -2,11 +2,11 @@
 
 [Файлы конфигурации](files/)
 
-![Terraform apply](./files/Graf1.png)
+![Dashbord-1](./files/Graf1.png)
 
-![Service accounts](./assets/T-3.png)
+![Dashbord-2](./files/Graf2.png)
 
-![S3 backend for terraform tfstate in YC Object Storage](./assets/T-2.png)
+![Dashbord-3](./files/Graf_metrics.png)
 
 VMS in YC
 ```
