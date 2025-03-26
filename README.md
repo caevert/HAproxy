@@ -294,7 +294,7 @@ scrape_configs:
 
 ```
 
-[Файлы конфигурации](files/)
+[Скриншоты](assets/)
 
 
 Дашборд Grafana
