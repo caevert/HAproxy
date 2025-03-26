@@ -115,11 +115,6 @@ listen stat
        stats auth admin:admin
        stats refresh 30s
 
-
-
-```shell
-cd kubespray
-cp inventory/sample inventory/netology
 ```
 
 3. Выясняем айпи машин кластера на которые будет производится установка:
